@@ -4,7 +4,7 @@
  <body>
    <form action="/action_page.php">
      Username: <input id="username" type="text" name="username"><br>
-     <button type="button" onclick="setUsername();">Puke</button>
+     <button type="button" onclick="setUsername();">cheese</button>
    </form>
    <button type="button" onclick="addData();">Click Me!</button>
  </body>
@@ -14,7 +14,7 @@
 <script>
   var username = "";
   function setUsername(){
-    username = document.getElementById("username");
+    username = String(document.getElementById("username"));
   }
   function addData() {
     firebase.database().ref("users/" + username).set({
