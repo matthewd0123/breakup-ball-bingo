@@ -12,9 +12,9 @@
 
 <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 <script>
-  var username = "";
+  //var username = "";
   function setUsername(){
-    username = String(document.getElementById("username"));
+    window.username = String(document.getElementById("username"));
   }
   function addData() {
     firebase.database().ref("users/" + username).set({
