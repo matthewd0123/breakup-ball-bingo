@@ -4,9 +4,38 @@
  <body>
    <form action="/action_page.php">
      Username: <input id="uname" type="text" name="uname"><br>
-     <button type="button" onclick="setUsername();">chicken</button>
+     <button type="button" onclick="setUsername();">btttttnn</button>
    </form>
-   <button type="button" onclick="addData();">Click Me!</button>
+   <button type="button" onclick="addData('1');">1</button>
+   <button type="button" onclick="addData('2');">2</button>
+   <button type="button" onclick="addData('3');">3</button>
+   <button type="button" onclick="addData('4');">4</button>
+   <button type="button" onclick="addData('5');">5</button>
+   <br>
+   <button type="button" onclick="addData('6');">6</button>
+   <button type="button" onclick="addData('7');">7</button>
+   <button type="button" onclick="addData('8');">8</button>
+   <button type="button" onclick="addData('9');">9</button>
+   <button type="button" onclick="addData('10');">10</button>
+   <br>
+   <button type="button" onclick="addData('11');">11</button>
+   <button type="button" onclick="addData('12');">12</button>
+   <button type="button" onclick="addData('13');">13</button>
+   <button type="button" onclick="addData('14');">14</button>
+   <button type="button" onclick="addData('15');">15</button>
+   <br>
+   <button type="button" onclick="addData('16');">16</button>
+   <button type="button" onclick="addData('17');">17</button>
+   <button type="button" onclick="addData('18');">18</button>
+   <button type="button" onclick="addData('19');">19</button>
+   <button type="button" onclick="addData('20');">20</button>
+   <br>
+   <button type="button" onclick="addData('21');">21</button>
+   <button type="button" onclick="addData('22');">22</button>
+   <button type="button" onclick="addData('23');">23</button>
+   <button type="button" onclick="addData('24');">24</button>
+   <button type="button" onclick="addData('25');">25</button>
+   <br>
  </body>
 </html>
 
@@ -16,10 +45,10 @@
   function setUsername(){
     window.username = String(document.getElementById("uname").value);
   }
-  function addData() {
+  function addData(box_num) {
     console.log("users/" + username)
     firebase.database().ref("users/" + username).set({
-      clicked: "yes"
+      box_num: "yes"
     });
   }
 
