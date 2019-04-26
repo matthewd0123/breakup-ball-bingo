@@ -1,0 +1,29 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+    align-content: center;
+    padding: 15px;
+}
+
+tr {
+  padding: 15px;
+  height: 100px;
+  width: 200px;
+}
+
+body {
+  width: 75%
+  margin: 0 auto; /* center */
+}
+
+#wrapper {
+  width: 50%;     /* specify a width! */
+  margin: 0 auto; /* center */
+
+}
