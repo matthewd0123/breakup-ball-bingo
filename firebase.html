@@ -2,12 +2,19 @@
 <!DOCTYPE html>
 <html>
  <body>
-   <button type="button">Click Me!</button> 
+   <button type="button" onclick="addData();">Click Me!</button>
  </body>
 </html>
 
 <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 <script>
+
+  function addData() {
+    firebase.database().ref().set({
+      clicked: "yes"
+    });
+  }
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyC_zcc_0kyf3H_CT0FK8_0dB_h36dqZHX0",
