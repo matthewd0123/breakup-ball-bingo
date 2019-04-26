@@ -16,8 +16,8 @@
   function setUsername(){
     username = document.getElementById("username");
   }
-  function addData(username) {
-    firebase.database().ref(username).set({
+  function addData() {
+    firebase.database().ref("users/" + username).set({
       clicked: "yes"
     });
   }
