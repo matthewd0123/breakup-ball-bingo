@@ -25,4 +25,9 @@
     messagingSenderId: "479902704369"
   };
   firebase.initializeApp(config);
+
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    window.user = user; // user is undefined if no user signed in
+  });
 </script>
