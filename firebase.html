@@ -4,7 +4,7 @@
  <body>
    <form action="/action_page.php">
      Username: <input id="uname" type="text" name="uname"><br>
-     <button type="button" onclick="setUsername();">square</button>
+     <button type="button" onclick="setUsername();">circle</button>
    </form>
    <button type="button" onclick="addData('1');">1</button>
    <button type="button" onclick="addData('2');">2</button>
@@ -47,8 +47,8 @@
   }
   function addData(box_num) {
     console.log("users/" + username)
-    firebase.database().ref("users/" + username).set({
-      [box_num]: "yes"
+    firebase.database().ref("users/" + username + "/" + box_num).set({
+      clicked: "yes"
     });
   }
 
