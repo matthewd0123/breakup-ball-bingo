@@ -3,13 +3,9 @@
 function checkForBingo(cell) { 
    markSquare(cell); // marks the cell that the user clicks
    // checks for BINGO!
-   var verticalBingo = checkVerticalBingo();
-   var horizontalBingo = checkHorizontalBingo();
-   var diagonalBingo = checkDiagonalBingo();
-   if (verticalBingo || horizontalBingo || diagonalBingo) {
-       alert("BINGO! You win!"); 
-   }   
-
+   verticalBingo = checkVerticalBingo();
+   horizontalBingo = checkHorizontalBingo();
+   diagonalBingo = checkDiagonalBingo();
 }
 
 function markSquare(cell) {
@@ -29,8 +25,7 @@ function checkVerticalBingo() {
         var cell4 = document.getElementById('cell' + (i + 15));
         var cell5 = document.getElementById('cell' + (i + 20));
 
-        var bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
-	return bingo;
+        checkLines(cell1, cell2, cell3, cell4, cell5);
     }
 }
 
@@ -74,8 +69,7 @@ function checkHorizontalBingo() {
                 var cell5 = document.getElementById('cell' + (i + 20));
                 break;
         }
-        var bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
-	return bingo;
+        checkLines(cell1, cell2, cell3, cell4, cell5);
     }
 }
 
@@ -97,8 +91,7 @@ function checkDiagonalBingo() {
                 var cell5 = document.getElementById('cell' + 20);
                 break;
         }
-        var bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
-	return bingo;
+        checkLines(cell1, cell2, cell3, cell4, cell5);
     }
 }
 
@@ -108,14 +101,13 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
         cell3.value == "FREE" &&
         cell4.style.backgroundColor == "red" && 
         cell5.style.backgroundColor == "red") {
-	    	return true;
+	    	alert("BINGO! You win!");
     }
     else if (cell1.style.backgroundColor == "red" &&
             cell2.style.backgroundColor == "red" &&
             cell3.style.backgroundColor == "red" &&
             cell4.style.backgroundColor == "red" &&
             cell5.style.backgroundColor == "red") {
-	    	return true;
+	    	alert("BINGO! You win!");
     }
-    return false;
 }
