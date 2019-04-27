@@ -1,14 +1,19 @@
 /* Borrowed from https://github.com/noahpen/bingo-js/blob/master/scripts/bingo.js for the BINGO logic */
 
 function checkForBingo(cell) { 
-   markSquare(cell);
-   checkVerticalBingo();
-   checkHorizontalBingo();
-   checkDiagonalBingo();
+   markSquare(cell); // marks the cell that the user clicks
+   // checks for BINGO!
+   var verticalBingo = checkVerticalBingo();
+   var horizontalBingo = checkHorizontalBingo();
+   var diagonalBingo = checkDiagonalBingo();
+   if (verticalBingo || horizontalBingo || diagonalBingo) {
+       alert("BINGO! You win!"); 
+   }   
+
 }
 
-function markSquare(square) {
-    var currentSquare = document.getElementById(square);
+function markSquare(cell) {
+    var currentSquare = document.getElementById(cell);
     if (currentSquare.style.backgroundColor == "red") 
         currentSquare.style.backgroundColor = "#ffffff";
     else
@@ -24,7 +29,8 @@ function checkVerticalBingo() {
         var cell4 = document.getElementById('cell' + (i + 15));
         var cell5 = document.getElementById('cell' + (i + 20));
 
-        checkLines(cell1, cell2, cell3, cell4, cell5);
+        var bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
+	return bingo;
     }
 }
 
@@ -68,7 +74,8 @@ function checkHorizontalBingo() {
                 var cell5 = document.getElementById('cell' + (i + 20));
                 break;
         }
-        checkLines(cell1, cell2, cell3, cell4, cell5);
+        var bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
+	return bingo;
     }
 }
 
@@ -90,7 +97,8 @@ function checkDiagonalBingo() {
                 var cell5 = document.getElementById('cell' + 20);
                 break;
         }
-        checkLines(cell1, cell2, cell3, cell4, cell5);
+        var bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
+	return bingo;
     }
 }
 
@@ -100,13 +108,14 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
         cell3.value == "FREE" &&
         cell4.style.backgroundColor == "red" && 
         cell5.style.backgroundColor == "red") {
-        	alert("BINGO! You win!");
+	    	return true;
     }
     else if (cell1.style.backgroundColor == "red" &&
             cell2.style.backgroundColor == "red" &&
             cell3.style.backgroundColor == "red" &&
             cell4.style.backgroundColor == "red" &&
             cell5.style.backgroundColor == "red") {
-        	alert("BINGO! You win!");
+	    	return true;
     }
+    return false;
 }
