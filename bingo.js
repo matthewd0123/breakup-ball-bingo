@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 function setUsername() {
     window.username = String(document.getElementById("uname").value);
     for (i = 0; i < 25; i++) {
-      firebase.database().ref("users/" + username + "/cell" + String(i)).set({
+      firebase.database().ref("users/" + username + "/cell" + i).set({
         clicked: "no"
       });
     }
