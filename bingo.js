@@ -1,6 +1,6 @@
 /* Borrowed from https://github.com/noahpen/bingo-js/blob/master/scripts/bingo.js for the BINGO logic */
 
-function checkForBingo(cell) { 
+function checkForBingo(cell) {
    markSquare(cell); // marks the cell that the user clicks
    // checks for BINGO!
    verticalBingo = checkVerticalBingo();
@@ -10,10 +10,12 @@ function checkForBingo(cell) {
 
 function markSquare(cell) {
     var currentSquare = document.getElementById(cell);
-    if (currentSquare.style.backgroundColor == "red") 
+    if (currentSquare.style.backgroundColor == "#DAA520")
         currentSquare.style.backgroundColor = "#ffffff";
     else
-        currentSquare.style.backgroundColor = "red";
+        currentSquare.style.backgroundColor = "#DAA520";
+        currentSquare.style.color = "white"
+        currentSquare.style.borderColor = "white"
     return;
 }
 
@@ -99,7 +101,7 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
     if (cell1.style.backgroundColor == "red" &&
         cell2.style.backgroundColor == "red" &&
         cell3.value == "FREE" &&
-        cell4.style.backgroundColor == "red" && 
+        cell4.style.backgroundColor == "red" &&
         cell5.style.backgroundColor == "red") {
 	    	alert("BINGO! You win!");
     }
