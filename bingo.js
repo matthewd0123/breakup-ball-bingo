@@ -1,18 +1,5 @@
 /* Borrowed from https://github.com/noahpen/bingo-js/blob/master/scripts/bingo.js for the BINGO logic */
 
-
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyC_zcc_0kyf3H_CT0FK8_0dB_h36dqZHX0",
-    authDomain: "breakup-ball-bingo.firebaseapp.com",
-    databaseURL: "https://breakup-ball-bingo.firebaseio.com",
-    projectId: "breakup-ball-bingo",
-    storageBucket: "breakup-ball-bingo.appspot.com",
-    messagingSenderId: "479902704369"
-};
-
-firebase.initializeApp(config);
-
 function setUsername() {
     window.username = String(document.getElementById("uname").value);
     for (i = 0; i < 25; i++) {
