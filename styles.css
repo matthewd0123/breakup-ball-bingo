@@ -50,7 +50,7 @@ h1 {
 #cell12 {
   background-color: #DAA520;
   color: white;
-  border: 2px solid white;
+  border: 2px solid #DAA520;
 
 }
 
@@ -79,4 +79,3 @@ only screen and (max-width: 760px),
   }
 
 
-}

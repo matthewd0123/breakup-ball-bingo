@@ -3,19 +3,23 @@
 function checkForBingo(cell) {
    markSquare(cell); // marks the cell that the user clicks
    // checks for BINGO!
-   verticalBingo = checkVerticalBingo();
-   horizontalBingo = checkHorizontalBingo();
-   diagonalBingo = checkDiagonalBingo();
+   checkVerticalBingo();
+   checkHorizontalBingo();
+   checkDiagonalBingo();
 }
 
 function markSquare(cell) {
     var currentSquare = document.getElementById(cell);
-    if (currentSquare.style.backgroundColor == "#DAA520")
-        currentSquare.style.backgroundColor = "#ffffff";
-    else
-        currentSquare.style.backgroundColor = "#DAA520";
-        currentSquare.style.color = "white"
-        currentSquare.style.borderColor = "white"
+    if (currentSquare.style.backgroundColor == "rgb(218, 165, 32)") {
+        currentSquare.style.backgroundColor = "white";
+        currentSquare.style.color = "rgb(33, 37, 41)";
+        currentSquare.style.borderColor = "rgb(218, 165, 32)";
+    }
+    else {
+        currentSquare.style.backgroundColor = "rgb(218, 165, 32)";
+        currentSquare.style.color = "white";
+        currentSquare.style.borderColor = "white";
+    }
     return;
 }
 
@@ -98,18 +102,18 @@ function checkDiagonalBingo() {
 }
 
 function checkLines(cell1, cell2, cell3, cell4, cell5) {
-    if (cell1.style.backgroundColor == "red" &&
-        cell2.style.backgroundColor == "red" &&
-        cell3.value == "FREE" &&
-        cell4.style.backgroundColor == "red" &&
-        cell5.style.backgroundColor == "red") {
+    if (cell1.style.backgroundColor == "rgb(218, 165, 32)" &&
+        cell2.style.backgroundColor == "rgb(218, 165, 32)" &&
+        cell3.innerText == "FREE SPACE" &&
+        cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
+        cell5.style.backgroundColor == "rgb(218, 165, 32)") {
 	    	alert("BINGO! You win!");
     }
-    else if (cell1.style.backgroundColor == "red" &&
-            cell2.style.backgroundColor == "red" &&
-            cell3.style.backgroundColor == "red" &&
-            cell4.style.backgroundColor == "red" &&
-            cell5.style.backgroundColor == "red") {
+    else if (cell1.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell2.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell3.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell5.style.backgroundColor == "rgb(218, 165, 32)") {
 	    	alert("BINGO! You win!");
     }
 }
