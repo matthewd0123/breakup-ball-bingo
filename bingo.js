@@ -1,7 +1,23 @@
 /* Borrowed from https://github.com/noahpen/bingo-js/blob/master/scripts/bingo.js for the BINGO logic */
 
+function setUsername() {
+    window.username = String(document.getElementById("uname").value);
+    for (i = 0; i < 25; i++) {
+      firebase.database().ref("users/" + username + "/cell" + i).set({
+        clicked: "no"
+      });
+    }
+}
+
+function addData(cell) { // keeps track of selected cells of the bingo boards with user
+    firebase.database().ref("users/" + username + "/" + cell).set({
+      clicked: "yes"
+    });
+}
+
 function checkForBingo(cell) {
    markSquare(cell); // marks the cell that the user clicks
+   addData(cell);
    // checks for BINGO!
    checkVerticalBingo();
    checkHorizontalBingo();
