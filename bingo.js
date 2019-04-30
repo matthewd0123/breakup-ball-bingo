@@ -100,18 +100,18 @@ function checkDiagonalBingo() {
 }
 
 function checkLines(cell1, cell2, cell3, cell4, cell5) {
-    if (cell1.style.backgroundColor == "rgb(33, 37, 41)" &&
-        cell2.style.backgroundColor == "rgb(33, 37, 41)" &&
+    if (cell1.style.backgroundColor == "rgb(218, 165, 32)" &&
+        cell2.style.backgroundColor == "rgb(218, 165, 32)" &&
         cell3.value == "FREE" &&
-        cell4.style.backgroundColor == "rgb(33, 37, 41)" &&
-        cell5.style.backgroundColor == "rgb(33, 37, 41)") {
+        cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
+        cell5.style.backgroundColor == "rgb(218, 165, 32)") {
 	    	alert("BINGO! You win!");
     }
-    else if (cell1.style.backgroundColor == "rgb(33, 37, 41)" &&
-            cell2.style.backgroundColor == "rgb(33, 37, 41)" &&
-            cell3.style.backgroundColor == "rgb(33, 37, 41)" &&
-            cell4.style.backgroundColor == "rgb(33, 37, 41)" &&
-            cell5.style.backgroundColor == "rgb(33, 37, 41)") {
+    else if (cell1.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell2.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell3.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
+            cell5.style.backgroundColor == "rgb(218, 165, 32)") {
 	    	alert("BINGO! You win!");
     }
 }
