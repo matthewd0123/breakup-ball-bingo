@@ -17,7 +17,7 @@ function markSquare(cell) {
     else {
         currentSquare.style.backgroundColor = "rgb(218, 165, 32)";
         currentSquare.style.color = "white";
-        currentSquare.style.borderColor = "white";
+        //currentSquare.style.borderColor = "white";
     }
     return;
 }
