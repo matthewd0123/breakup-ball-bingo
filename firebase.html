@@ -37,7 +37,7 @@
    <button type="button" onclick="addData('25');">25</button>
    <br>
    <br>
-   <button type="button" onclick="pullData();">Refresh</button>
+   <button type="button" onclick="pullData();">deefresh</button>
    <table id="dataTable" style="width:100%">
    </table>
  </body>
@@ -59,10 +59,10 @@
         var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
         cell1.innerHTML = keysObj[i]
-        console.log(valuesObj)
         for (j = 0; j < valuesObj.length; j++){
           var cell2 = row.insertCell(j+1)
-          cell2.innerHTML = valuesObj[i][j]
+          console.log(Object.values(Object.values(valuesObj[i])[j]))
+          cell2.innerHTML = Object.values(Object.values(valuesObj[i])[j])
         }
       }
       console.log(allData)
