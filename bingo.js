@@ -2,7 +2,6 @@
 
 function checkForBingo(cell) {
    markSquare(cell); // marks the cell that the user clicks
-   alert("in check");
    // checks for BINGO!
    checkVerticalBingo();
    checkHorizontalBingo();
@@ -35,8 +34,6 @@ function checkVerticalBingo() {
 }
 
 function checkHorizontalBingo() {
-
-   alert("in horizontal");
     j = 0;
     for (var i = 0; i < 5; i++) {
         switch(i) {
@@ -103,18 +100,18 @@ function checkDiagonalBingo() {
 }
 
 function checkLines(cell1, cell2, cell3, cell4, cell5) {
-    if (cell1.style.backgroundColor == "red" &&
-        cell2.style.backgroundColor == "red" &&
+    if (cell1.style.backgroundColor == "rgb(33, 37, 41)" &&
+        cell2.style.backgroundColor == "rgb(33, 37, 41)" &&
         cell3.value == "FREE" &&
-        cell4.style.backgroundColor == "red" &&
-        cell5.style.backgroundColor == "red") {
+        cell4.style.backgroundColor == "rgb(33, 37, 41)" &&
+        cell5.style.backgroundColor == "rgb(33, 37, 41)") {
 	    	alert("BINGO! You win!");
     }
-    else if (cell1.style.backgroundColor == "red" &&
-            cell2.style.backgroundColor == "red" &&
-            cell3.style.backgroundColor == "red" &&
-            cell4.style.backgroundColor == "red" &&
-            cell5.style.backgroundColor == "red") {
+    else if (cell1.style.backgroundColor == "rgb(33, 37, 41)" &&
+            cell2.style.backgroundColor == "rgb(33, 37, 41)" &&
+            cell3.style.backgroundColor == "rgb(33, 37, 41)" &&
+            cell4.style.backgroundColor == "rgb(33, 37, 41)" &&
+            cell5.style.backgroundColor == "rgb(33, 37, 41)") {
 	    	alert("BINGO! You win!");
     }
 }
