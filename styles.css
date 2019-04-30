@@ -36,8 +36,8 @@ body {
 #background1 {
   background-color: white;
   position:absolute;
-/*  margin-left:350px;
-  margin-right:350px; */
+  margin-left:350px;
+  margin-right:350px;
 }
 
 h1 {
@@ -85,29 +85,24 @@ only screen and (max-width: 760px),
   td {
       left: 50%;
       right: 50%;
-      padding: 15px;
+      padding: 5px;;
       width: 30px;
       text-align: center;
+      font-size: 10px;
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
   }
 
   tr {
-    padding: 15px;
+    padding: 5px;
     height: 30px;
   }
 
   body {
     margin: 0 auto; /* center */
     background-color: #e6e6e6;
-    background-image: url("lights.jpg");
-    background-size: cover;
   }
 
-  #wrapper {
-    width: 70%;     /* specify a width! */
-    margin: 0 auto; /* center */
-  }
 
   #background1 {
     background-color: white;
