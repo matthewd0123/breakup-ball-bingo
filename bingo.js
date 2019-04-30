@@ -7,6 +7,7 @@ function setUsername() {
         clicked: "no"
       });
     }
+    window.location.replace("./bingo.html");	
 }
 
 function addData(cell) { // keeps track of selected cells of the bingo boards with user
