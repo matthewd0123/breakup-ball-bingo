@@ -36,8 +36,8 @@ body {
 #background1 {
   background-color: white;
   position:absolute;
-  margin-left:350px;
-  margin-right:350px;
+/*  margin-left:350px;
+  margin-right:350px; */
 }
 
 h1 {
@@ -105,6 +105,6 @@ only screen and (max-width: 760px),
 		padding-right: 10px;
 		white-space: nowrap;
 	}
-	
+
 
 }
