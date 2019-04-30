@@ -3,9 +3,9 @@
 function checkForBingo(cell) {
    markSquare(cell); // marks the cell that the user clicks
    // checks for BINGO!
-   verticalBingo = checkVerticalBingo();
-   horizontalBingo = checkHorizontalBingo();
-   diagonalBingo = checkDiagonalBingo();
+   checkVerticalBingo();
+   checkHorizontalBingo();
+   checkDiagonalBingo();
 }
 
 function markSquare(cell) {
@@ -17,7 +17,6 @@ function markSquare(cell) {
     else {
         currentSquare.style.backgroundColor = "rgb(218, 165, 32)";
         currentSquare.style.color = "white";
-        //currentSquare.style.borderColor = "white";
     }
     return;
 }
