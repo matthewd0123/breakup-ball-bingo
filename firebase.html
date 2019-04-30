@@ -62,7 +62,8 @@
         var cell2 = row.insertCell(1)
         yeses = 0;
         for (j = 0; j < valuesObj.length; j++){
-          if (Object.values(Object.values(valuesObj[i])[j])){
+          console.log(Object.values(valuesObj[i]))
+          if (Object.values(valuesObj[i]) == "yes"){
             yeses ++;
           }
         }
