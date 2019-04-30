@@ -59,6 +59,7 @@
         var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
         cell1.innerHTML = keysObj[i]
+        console.log(valuesObj)
         for (j = 0; j < valuesObj[0].length; j++){
           var cell2 = row.insertCell(j+1)
           cell2.innerHTML = valuesObj[j]
