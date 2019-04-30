@@ -63,7 +63,7 @@
         yeses = 0;
         for (j = 0; j < valuesObj.length; j++){
           console.log(Object.values(Object.values(valuesObj[i])[j]))
-          if (Object.values(valuesObj[i]) == "yes"){
+          if (Object.values(Object.values(valuesObj[i])[j])[0] == "yes"){
             yeses ++;
           }
         }
