@@ -62,7 +62,7 @@
         console.log(valuesObj)
         for (j = 0; j < valuesObj.length; j++){
           var cell2 = row.insertCell(j+1)
-          cell2.innerHTML = valuesObj[i][j]
+          cell2.innerHTML = Object.values(valuesObj[i])
         }
       }
       console.log(allData)
