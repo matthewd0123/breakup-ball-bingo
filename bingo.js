@@ -11,7 +11,7 @@ function checkForBingo(cell) {
 function markSquare(cell) {
     var currentSquare = document.getElementById(cell);
     if (currentSquare.style.backgroundColor == "#DAA520")
-        currentSquare.style.backgroundColor = "#ffffff";
+        currentSquare.style.backgroundColor = "white";
     else
         currentSquare.style.backgroundColor = "#DAA520";
         currentSquare.style.color = "white"
