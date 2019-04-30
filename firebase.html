@@ -36,12 +36,22 @@
    <button type="button" onclick="addData('24');">24</button>
    <button type="button" onclick="addData('25');">25</button>
    <br>
+   <br>
+   <button type="button" onclick="pullData();">Refresh</button>
  </body>
 </html>
 
 <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 <script>
   //var username = "";
+  function pullData(){
+    firebase.database().ref('/users/').once('value').then(function(snapshot) {
+      console.log(snapshot.val())
+      //var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+      // ...
+    });
+
+  }
   function setUsername(){
     window.username = String(document.getElementById("uname").value);
     for (i = 0; i < 25; i++){
