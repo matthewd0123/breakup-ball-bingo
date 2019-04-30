@@ -1,5 +1,5 @@
 table, th, td {
-  border: 2px solid rgb(218, 165, 32);
+  border: 2px solid #DAA520;
 }
 
 table {
@@ -48,7 +48,7 @@ h1 {
 }
 
 #cell12 {
-  background-color: rgb(218, 165, 32);
+  background-color: #DAA520;
   color: white;
   border: 2px solid white;
 
@@ -69,4 +69,3 @@ p {
   height: 200px;
   border: 2px solid #DAA520;
 
-}
