@@ -102,7 +102,7 @@ function checkDiagonalBingo() {
 function checkLines(cell1, cell2, cell3, cell4, cell5) {
     if (cell1.style.backgroundColor == "rgb(218, 165, 32)" &&
         cell2.style.backgroundColor == "rgb(218, 165, 32)" &&
-        cell3.value == "FREE SPACE" &&
+        cell3.innerText == "FREE SPACE" &&
         cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
         cell5.style.backgroundColor == "rgb(218, 165, 32)") {
 	    	alert("BINGO! You win!");
