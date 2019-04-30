@@ -49,7 +49,7 @@
   function pullData(){
     firebase.database().ref('/users/').once('value').then(function(snapshot) {
       var  allData = snapshot.val()
-      for (i = 0; i < Object.size(allData); i++){
+      for (i = 0; i < Object.keys(allData).length; i++){
         var table = document.getElementById("dataTable");
         var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
