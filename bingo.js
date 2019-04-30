@@ -2,6 +2,7 @@
 
 function checkForBingo(cell) {
    markSquare(cell); // marks the cell that the user clicks
+   alert("in check");
    // checks for BINGO!
    checkVerticalBingo();
    checkHorizontalBingo();
@@ -34,6 +35,8 @@ function checkVerticalBingo() {
 }
 
 function checkHorizontalBingo() {
+
+   alert("in horizontal");
     j = 0;
     for (var i = 0; i < 5; i++) {
         switch(i) {
