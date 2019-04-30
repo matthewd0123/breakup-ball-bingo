@@ -1,20 +1,19 @@
 /* Borrowed from https://github.com/noahpen/bingo-js/blob/master/scripts/bingo.js for the BINGO logic */
 
-var username = "";
+var user = "";
 
 function setUsername() {
-    username = String(document.getElementById("uname").value);
+    user = String(document.getElementById("uname").value);
     for (i = 0; i < 25; i++) {
-      firebase.database().ref("users/" + username + "/cell" + i).set({
+      firebase.database().ref("users/" + usern + "/cell" + i).set({
         clicked: "no"
       });
     }
     window.location.replace("./bingo.html");	
-
 }
 
 function addData(cell) { // keeps track of selected cells of the bingo boards with user
-    firebase.database().ref("users/" + username + "/" + cell).set({
+    firebase.database().ref("users/" + user + "/" + cell).set({
       clicked: "yes"
     });
 }
