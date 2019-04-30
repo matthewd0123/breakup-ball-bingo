@@ -10,10 +10,10 @@ function checkForBingo(cell) {
 
 function markSquare(cell) {
     var currentSquare = document.getElementById(cell);
-    if (currentSquare.style.backgroundColor == "#DAA520")
+    if (currentSquare.style.backgroundColor == "rgb(218, 165, 32)")
         currentSquare.style.backgroundColor = "white";
     else
-        currentSquare.style.backgroundColor = "#DAA520";
+        currentSquare.style.backgroundColor = "rgb(218, 165, 32)";
         currentSquare.style.color = "white"
         currentSquare.style.borderColor = "white"
     return;
