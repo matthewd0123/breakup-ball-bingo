@@ -13,7 +13,7 @@ function markSquare(cell) {
     if (currentSquare.style.backgroundColor == "rgb(218, 165, 32)")
         currentSquare.style.backgroundColor = "white";
     else
-        currentSquare.style.backgroundColor = "rgb(218, 165, 32)";
+        currentSquare.style.backgroundColor = "rgb(218, 165, 32)"; // trying to see why this won't add
         currentSquare.style.color = "white"
         currentSquare.style.borderColor = "white"
     return;
