@@ -1,5 +1,5 @@
 table, th, td {
-  border: 1px solid black;
+  border: 2px solid #DAA520;
 }
 
 table {
@@ -7,23 +7,65 @@ table {
 }
 
 td {
-    align-content: center;
+    left: 50%;
+    right: 50%;
     padding: 15px;
+    width: 160px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 tr {
   padding: 15px;
-  height: 100px;
-  width: 200px;
+  height: 160px;
 }
 
 body {
-  width: 75%
   margin: 0 auto; /* center */
+  background-color: #e6e6e6;
+  background-image: url("lights.jpg");
+  background-size: cover;
 }
 
 #wrapper {
-  width: 50%;     /* specify a width! */
+  width: 70%;     /* specify a width! */
   margin: 0 auto; /* center */
+}
+
+#background1 {
+  background-color: white;
+  position:absolute;
+  margin-left:350px;
+  margin-right:350px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  padding-top: 70px;
+  font-size: 70px;
+  color: #DAA520
+}
+
+#cell12 {
+  background-color: #DAA520;
+  color: white;
+  border: 2px solid #DAA520;
 
 }
+
+#spacing {
+  height: 100px;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#textbox {
+  width: 100%;
+  height: 200px;
+  border: 2px solid #DAA520;
+
