@@ -5,7 +5,7 @@ var user = "";
 function setUsername() {
     user = String(document.getElementById("uname").value);
     for (i = 0; i < 25; i++) {
-      firebase.database().ref("users/" + usern + "/cell" + i).set({
+      firebase.database().ref("users/" + user + "/cell" + i).set({
         clicked: "no"
       });
     }
