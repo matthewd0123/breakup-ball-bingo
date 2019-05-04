@@ -1,7 +1,6 @@
 /* Borrowed from https://github.com/noahpen/bingo-js/blob/master/scripts/bingo.js for the BINGO logic */
 
 function setUsername(user) {
-    user = String(document.getElementById("uname").value);
     for (i = 0; i < 25; i++) {
       firebase.database().ref("users/" + user + "/cell" + i).set({
         clicked: "no"
