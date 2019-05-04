@@ -7,7 +7,13 @@ function setUsername() {
         clicked: "no"
       });
     }
-//window.location.replace("./bingo.html");	
+}
+
+function addInteresting(user) {
+    witness_account = String(document.getElementById("witness").value);
+    firebase.database().ref("interesting_stories/" + user).set({
+        witness_account
+    });
 }
 
 function addYesData(cell, user) { // keeps track of selected cells of the bingo boards with user
@@ -32,6 +38,11 @@ function checkForBingo(cell, user) {
    if (verticalBingo || horizontalBingo || diagonalBingo) {
        firebase.database().ref("users/" + user + "/bingo?").set({
            clicked: "true"
+       });
+   } 
+   else {
+       firebase.database().ref("users/" + user + "/bingo?").set({
+           clicked: "false"
        });
    }
 }
