@@ -18,17 +18,21 @@ function addYesData(cell, user) { // keeps track of selected cells of the bingo 
 
 function addNoData(cell, user) { // keeps track of selected cells of the bingo boards with user
     firebase.database().ref("users/" + user + "/" + cell).set({
-      clicked: "no"
+        clicked: "no"
     });
 }
 
 function checkForBingo(cell, user) {
    markSquare(cell, user); // marks the cell that the user clicks
-   //addData(cell, user);
    // checks for BINGO!
-   checkVerticalBingo();
-   checkHorizontalBingo();
-   checkDiagonalBingo();
+   verticalBingo = checkVerticalBingo();
+   horizontalBingo = checkHorizontalBingo();
+   diagonalBingo = checkDiagonalBingo();
+   if (verticalBingo || horizaontalBingo || diagonalBingo) {
+       firebase.database().ref("users/" + user + "/bingo?").set({
+           clicked: "true"
+       });
+   }
 }
 
 function pullData() {
@@ -78,7 +82,7 @@ function checkVerticalBingo() {
         var cell4 = document.getElementById('cell' + (i + 15));
         var cell5 = document.getElementById('cell' + (i + 20));
 
-        checkLines(cell1, cell2, cell3, cell4, cell5);
+        return checkLines(cell1, cell2, cell3, cell4, cell5);
     }
 }
 
@@ -122,7 +126,7 @@ function checkHorizontalBingo() {
                 var cell5 = document.getElementById('cell' + (i + 20));
                 break;
         }
-        checkLines(cell1, cell2, cell3, cell4, cell5);
+        return checkLines(cell1, cell2, cell3, cell4, cell5);
     }
 }
 
@@ -144,7 +148,7 @@ function checkDiagonalBingo() {
                 var cell5 = document.getElementById('cell' + 20);
                 break;
         }
-        checkLines(cell1, cell2, cell3, cell4, cell5);
+        return checkLines(cell1, cell2, cell3, cell4, cell5);
     }
 }
 
@@ -155,6 +159,7 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
         cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
         cell5.style.backgroundColor == "rgb(218, 165, 32)") {
 	    	alert("BINGO! You win!");
+	        return true;
     }
     else if (cell1.style.backgroundColor == "rgb(218, 165, 32)" &&
             cell2.style.backgroundColor == "rgb(218, 165, 32)" &&
@@ -162,5 +167,6 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
             cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
             cell5.style.backgroundColor == "rgb(218, 165, 32)") {
 	    	alert("BINGO! You win!");
+	        return true;
     }
 }
