@@ -5,14 +5,18 @@ function setUsername() {
     for (i = 0; i < 25; i++) {
       firebase.database().ref("users/" + user + "/cell" + i).set({
         clicked: "no"
-      });
+      }); 
     }
+
+    firebase.database().ref("users/" + user + "/cell12").set({
+       clicked: "yes"
+    }); 
 }
 
 function addInteresting(user) {
     witness_account = String(document.getElementById("witness").value);
     firebase.database().ref("interesting_stories/" + user).set({
-        witness_account
+        value: witness_account + ""
     });
 }
 
