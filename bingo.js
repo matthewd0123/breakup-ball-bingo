@@ -23,12 +23,13 @@ function addNoData(cell, user) { // keeps track of selected cells of the bingo b
 }
 
 function checkForBingo(cell, user) {
+   var verticalBingo, horizontalBingo, diagonalBingo = false;
    markSquare(cell, user); // marks the cell that the user clicks
    // checks for BINGO!
    verticalBingo = checkVerticalBingo();
    horizontalBingo = checkHorizontalBingo();
    diagonalBingo = checkDiagonalBingo();
-   if (verticalBingo || horizaontalBingo || diagonalBingo) {
+   if (verticalBingo || horizontalBingo || diagonalBingo) {
        firebase.database().ref("users/" + user + "/bingo?").set({
            clicked: "true"
        });
