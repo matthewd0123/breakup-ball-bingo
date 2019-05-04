@@ -16,6 +16,7 @@ function addData(cell, user) { // keeps track of selected cells of the bingo boa
 }
 
 function checkForBingo(cell, user) {
+   setUsername(user);
    markSquare(cell); // marks the cell that the user clicks
    addData(cell, user);
    // checks for BINGO!
