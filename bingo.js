@@ -10,15 +10,21 @@ function setUsername() {
 //window.location.replace("./bingo.html");	
 }
 
-function addData(cell, user) { // keeps track of selected cells of the bingo boards with user
+function addYesData(cell, user) { // keeps track of selected cells of the bingo boards with user
     firebase.database().ref("users/" + user + "/" + cell).set({
       clicked: "yes"
     });
 }
 
+function addNoData(cell, user) { // keeps track of selected cells of the bingo boards with user
+    firebase.database().ref("users/" + user + "/" + cell).set({
+      clicked: "no"
+    });
+}
+
 function checkForBingo(cell, user) {
-   markSquare(cell); // marks the cell that the user clicks
-   addData(cell, user);
+   markSquare(cell, user); // marks the cell that the user clicks
+   //addData(cell, user);
    // checks for BINGO!
    checkVerticalBingo();
    checkHorizontalBingo();
@@ -47,15 +53,17 @@ function pullData() {
     });
 }
 
-function markSquare(cell) {
+function markSquare(cell, user) {
     var currentSquare = document.getElementById(cell);
     if (currentSquare.style.backgroundColor == "rgb(218, 165, 32)") {
+	addNoData(cell, user);
         currentSquare.style.backgroundColor = "white";
         currentSquare.style.color = "rgb(33, 37, 41)";
         currentSquare.style.borderColor = "rgb(218, 165, 32)";
     }
     else {
-        currentSquare.style.backgroundColor = "rgb(218, 165, 32)";
+        addYesData(cell, user);
+	currentSquare.style.backgroundColor = "rgb(218, 165, 32)";
         currentSquare.style.color = "white";
         currentSquare.style.borderColor = "white";
     }
