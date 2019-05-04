@@ -21,7 +21,6 @@
 		var user = window.location.search.replace("?", "");
 		user = user.split("=");
 		user = user[1];
-		alert(user);
 	</script>
 
  <body>
@@ -66,9 +65,14 @@
 	<td id="cell24" onclick="checkForBingo('cell24', user)">SOMEONE TAKES A PULL FROM A FLASK</td>
       </tr>
       </table>
-    <br>
-    <br>
-  <p>Anything Interesting Happen?</p>
+      <br>
+     <br>
+     <button type="button" onclick="pullData();">View Leaderboard</button>
+     <table id="dataTable" style="width:100%">
+     </table>    
+      <br>
+      <br>
+     <p>Anything Interesting Happen?</p>
   <form method="PUT" id="interesting" action="./surprise.html">
     <p>
       <input type="text" id="textbox"/>

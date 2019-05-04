@@ -24,6 +24,28 @@ function checkForBingo(cell, user) {
    checkDiagonalBingo();
 }
 
+function pullData() {
+    firebase.database().ref('/users/').once('value').then(function(snapshot) {
+    var  allData = snapshot.val()
+    var keysObj = Object.keys(allData)
+    var valuesObj = Object.values(allData)
+    var table = document.getElementById("dataTable");
+    for (i = 0; i < keysObj.length; i++) {
+	var row = table.insertRow(i);
+ 	var cell1 = row.insertCell(0);
+ 	cell1.innerHTML = keysObj[i];
+	var cell2 = row.insertCell(1)
+	yeses = 0;
+	for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
+  	    if (Object.values(Object.values(valuesObj[i])[j])[0] == "yes") {
+    	    	yeses ++;
+  	    }
+	}
+    cell2.innerHTML = yeses
+    }
+    });
+}
+
 function markSquare(cell) {
     var currentSquare = document.getElementById(cell);
     if (currentSquare.style.backgroundColor == "rgb(218, 165, 32)") {
