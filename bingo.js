@@ -41,7 +41,7 @@ function checkForBingo(cell, user) {
    verticalBingo = checkVerticalBingo();
    horizontalBingo = checkHorizontalBingo();
    diagonalBingo = checkDiagonalBingo();
-   if (verticalBingo || horizontalBingo || diagonalBingo) {
+/*   if (verticalBingo || horizontalBingo || diagonalBingo) {
        firebase.database().ref("users/" + user + "/bingo?").set({
            win: "true"
        });
@@ -50,7 +50,7 @@ function checkForBingo(cell, user) {
        firebase.database().ref("users/" + user + "/bingo?").set({
            win: "false"
        });
-   }
+   }*/
 }
 
 function pullData() {
@@ -182,6 +182,9 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
         cell3.innerText == "FREE SPACE" &&
         cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
         cell5.style.backgroundColor == "rgb(218, 165, 32)") {
+        	firebase.database().ref("users/" + user + "/bingo?").set({
+           		win: "true"
+       		});
 	    	alert("BINGO! You win!");
 	        return true;
     }
@@ -190,8 +193,14 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
             cell3.style.backgroundColor == "rgb(218, 165, 32)" &&
             cell4.style.backgroundColor == "rgb(218, 165, 32)" &&
             cell5.style.backgroundColor == "rgb(218, 165, 32)") {
+        	firebase.database().ref("users/" + user + "/bingo?").set({
+           		win: "true"
+       		});
 	    	alert("BINGO! You win!");
 	        return true;
     }
+    firebase.database().ref("users/" + user + "/bingo?").set({
+        win: "true"
+    });
     return false;
 }
