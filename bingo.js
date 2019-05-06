@@ -43,12 +43,12 @@ function checkForBingo(cell, user) {
    diagonalBingo = checkDiagonalBingo();
    if (verticalBingo || horizontalBingo || diagonalBingo) {
        firebase.database().ref("users/" + user + "/bingo?").set({
-           clicked: "true"
+           win: "true"
        });
    } 
    else {
        firebase.database().ref("users/" + user + "/bingo?").set({
-           clicked: "false"
+           win: "false"
        });
    }
 }
