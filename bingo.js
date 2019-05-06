@@ -179,7 +179,9 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
        		});
 	    	alert("BINGO! You win!");
     }
-    firebase.database().ref("users/" + user + "/bingo?").set({
-        win: "false"
-    });
+    else {
+		firebase.database().ref("users/" + user + "/bingo?").set({
+        	win: "false"
+    	});
+    }
 }
