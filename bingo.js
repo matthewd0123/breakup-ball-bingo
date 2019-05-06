@@ -93,6 +93,7 @@ function markSquare(cell, user) {
 }
 
 function checkVerticalBingo() {
+    var bingo = false;
     for (var i = 0; i < 5; i++) {
         var cell1 = document.getElementById('cell' + i);
         var cell2 = document.getElementById('cell' + (i + 5));
@@ -100,12 +101,14 @@ function checkVerticalBingo() {
         var cell4 = document.getElementById('cell' + (i + 15));
         var cell5 = document.getElementById('cell' + (i + 20));
 
-        return checkLines(cell1, cell2, cell3, cell4, cell5);
+        bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
     }
+    return bingo;
 }
 
 function checkHorizontalBingo() {
     j = 0;
+    var bingo = false;
     for (var i = 0; i < 5; i++) {
         switch(i) {
             case 0:
@@ -144,11 +147,13 @@ function checkHorizontalBingo() {
                 var cell5 = document.getElementById('cell' + (i + 20));
                 break;
         }
-        return checkLines(cell1, cell2, cell3, cell4, cell5);
+        bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
     }
+    return bingo;
 }
 
 function checkDiagonalBingo() {
+    var bingo = false;
     for (var i = 0; i < 2; i++) {
         switch(i) {
             case 0:
@@ -166,8 +171,9 @@ function checkDiagonalBingo() {
                 var cell5 = document.getElementById('cell' + 20);
                 break;
         }
-        return checkLines(cell1, cell2, cell3, cell4, cell5);
+        bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
     }
+    return bingo;
 }
 
 function checkLines(cell1, cell2, cell3, cell4, cell5) {
