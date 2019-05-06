@@ -33,24 +33,11 @@ function addNoData(cell, user) { // keeps track of selected cells of the bingo b
 }
 
 function checkForBingo(cell, user) {
-   var verticalBingo = false;
-   var horizontalBingo = false;
-   var diagonalBingo = false;
    markSquare(cell, user); // marks the cell that the user clicks
    // checks for BINGO!
-   verticalBingo = checkVerticalBingo();
-   horizontalBingo = checkHorizontalBingo();
-   diagonalBingo = checkDiagonalBingo();
-/*   if (verticalBingo || horizontalBingo || diagonalBingo) {
-       firebase.database().ref("users/" + user + "/bingo?").set({
-           win: "true"
-       });
-   } 
-   else {
-       firebase.database().ref("users/" + user + "/bingo?").set({
-           win: "false"
-       });
-   }*/
+   checkVerticalBingo();
+   checkHorizontalBingo();
+   checkDiagonalBingo();
 }
 
 function pullData() {
@@ -93,7 +80,6 @@ function markSquare(cell, user) {
 }
 
 function checkVerticalBingo() {
-    var bingo = false;
     for (var i = 0; i < 5; i++) {
         var cell1 = document.getElementById('cell' + i);
         var cell2 = document.getElementById('cell' + (i + 5));
@@ -101,14 +87,12 @@ function checkVerticalBingo() {
         var cell4 = document.getElementById('cell' + (i + 15));
         var cell5 = document.getElementById('cell' + (i + 20));
 
-        bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
+        checkLines(cell1, cell2, cell3, cell4, cell5);
     }
-    return bingo;
 }
 
 function checkHorizontalBingo() {
     j = 0;
-    var bingo = false;
     for (var i = 0; i < 5; i++) {
         switch(i) {
             case 0:
@@ -147,13 +131,11 @@ function checkHorizontalBingo() {
                 var cell5 = document.getElementById('cell' + (i + 20));
                 break;
         }
-        bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
+        checkLines(cell1, cell2, cell3, cell4, cell5);
     }
-    return bingo;
 }
 
 function checkDiagonalBingo() {
-    var bingo = false;
     for (var i = 0; i < 2; i++) {
         switch(i) {
             case 0:
@@ -171,9 +153,8 @@ function checkDiagonalBingo() {
                 var cell5 = document.getElementById('cell' + 20);
                 break;
         }
-        bingo = checkLines(cell1, cell2, cell3, cell4, cell5);
+        checkLines(cell1, cell2, cell3, cell4, cell5);
     }
-    return bingo;
 }
 
 function checkLines(cell1, cell2, cell3, cell4, cell5) {
@@ -197,10 +178,8 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
            		win: "true"
        		});
 	    	alert("BINGO! You win!");
-	        return true;
     }
     firebase.database().ref("users/" + user + "/bingo?").set({
-        win: "true"
+        win: "false"
     });
-    return false;
 }
