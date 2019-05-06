@@ -33,7 +33,9 @@ function addNoData(cell, user) { // keeps track of selected cells of the bingo b
 }
 
 function checkForBingo(cell, user) {
-   var verticalBingo, horizontalBingo, diagonalBingo = false;
+   var verticalBingo = false;
+   var horizontalBingo = false;
+   var diagonalBingo = false;
    markSquare(cell, user); // marks the cell that the user clicks
    // checks for BINGO!
    verticalBingo = checkVerticalBingo();
@@ -185,4 +187,5 @@ function checkLines(cell1, cell2, cell3, cell4, cell5) {
 	    	alert("BINGO! You win!");
 	        return true;
     }
+    return false;
 }
