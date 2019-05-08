@@ -71,7 +71,7 @@ function pullStoryData() {
     console.log(allData)
     console.log(keysObj)
     console.log(valuesObj)
-    console.log(Object.values(valuesObj))
+    console.log(valuesObj[0])
     for (i = 0; i < keysObj.length; i++) {
 	    var row = table.insertRow(i);
  	    var cell1 = row.insertCell(0);
