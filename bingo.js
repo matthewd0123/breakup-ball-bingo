@@ -48,11 +48,16 @@ function pullData() {
     var valuesObj = Object.values(allData)
     var table = document.getElementById("dataTable");
     table.innerHTML = "";
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = "Username";
+    var cell2 = row.insertCell(1);
+    cell2.innerHTML = "Number of Cells Filled"
     for (i = 0; i < keysObj.length; i++) {
-	    var row = table.insertRow(i);
- 	    var cell1 = row.insertCell(0);
+	    row = table.insertRow(i+1);
+ 	    cell1 = row.insertCell(0);
  	    cell1.innerHTML = keysObj[i];
-	    var cell2 = row.insertCell(1)
+	    cell2 = row.insertCell(1)
 	    yeses = 0;
 	    for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
   	    if (Object.values(Object.values(valuesObj[i])[j])[0] == "yes") {
@@ -70,6 +75,7 @@ function pullStoryData() {
     var keysObj = Object.keys(allData)
     var valuesObj = Object.values(allData)
     var table = document.getElementById("storyTable");
+    table.innerHTML = "";
     console.log(allData)
     console.log(keysObj)
     console.log(valuesObj)
