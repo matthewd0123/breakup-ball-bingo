@@ -5,12 +5,12 @@ function setUsername() {
     for (i = 0; i < 25; i++) {
       firebase.database().ref("users/" + user + "/cell" + i).set({
         clicked: "no"
-      }); 
+      });
     }
 
     firebase.database().ref("users/" + user + "/cell12").set({
        clicked: "yes"
-    }); 
+    });
 }
 
 function addInteresting(user) {
@@ -47,20 +47,44 @@ function pullData() {
     var valuesObj = Object.values(allData)
     var table = document.getElementById("dataTable");
     for (i = 0; i < keysObj.length; i++) {
-	var row = table.insertRow(i);
- 	var cell1 = row.insertCell(0);
- 	cell1.innerHTML = keysObj[i];
-	var cell2 = row.insertCell(1)
-	yeses = 0;
-	for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
+	    var row = table.insertRow(i);
+ 	    var cell1 = row.insertCell(0);
+ 	    cell1.innerHTML = keysObj[i];
+	    var cell2 = row.insertCell(1)
+	    yeses = 0;
+	    for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
   	    if (Object.values(Object.values(valuesObj[i])[j])[0] == "yes") {
     	    	yeses ++;
   	    }
-	}
-    cell2.innerHTML = yeses
+	    }
+      cell2.innerHTML = yeses
     }
     });
 }
+
+function pullStoryData() {
+    firebase.database().ref('/interesting_stories/').once('value').then(function(snapshot) {
+    var  allData = snapshot.val()
+    var keysObj = Object.keys(allData)
+    var valuesObj = Object.values(allData)
+    var table = document.getElementById("storyTable");
+    console.log(allData)
+    for (i = 0; i < keysObj.length; i++) {
+	    var row = table.insertRow(i);
+ 	    var cell1 = row.insertCell(0);
+ 	    cell1.innerHTML = keysObj[i];
+	    var cell2 = row.insertCell(1)
+	    yeses = 0;
+	    for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
+  	    if (Object.values(Object.values(valuesObj[i])[j])[0] == "yes") {
+    	    	yeses ++;
+  	    }
+	    }
+      cell2.innerHTML = yeses
+    }
+    });
+}
+
 
 function markSquare(cell, user) {
     var currentSquare = document.getElementById(cell);
