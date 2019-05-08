@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css"  href="styles.css">
+    <link rel="stylesheet" type="text/css"  href="bingo.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
@@ -29,7 +29,6 @@
    <div id="wrapper">
       <h1> Breakup Ball Bingo </h1>
       <br>
-      <input type="button" onclick="location.href='./documentation.html';" value="Learn More About the Breakup Ball Bingo Project!" />
       <br>
       <table style="width:100%">
       <tr>
@@ -70,21 +69,25 @@
       </table>
       <br>
      <br>
-     <button type="button" onclick="pullData();">View Leaderboard</button>
+     <button id="button" type="button" onclick="pullData();">View Leaderboard</button>
      <table id="dataTable" style="width:100%">
-     </table>    
+     </table>
       <br>
       <br>
      <p>Anything Interesting Happen?</p>
   <form id="interesting">
     <p>
       <input id="witness" type="text" name="witness"><br>
-      <input type="submit" id="interesting_story" onClick="addInteresting(user)" formaction="./suprise.html" value="Submit!"/>
+      <br>
+      <input id="button" type="submit" id="interesting_story" onClick="addInteresting(user)" formaction="./suprise.html" value="Submit!"/>
     </p>
   </form>
   </div>
+  Learn More About the Breakup Ball Bingo Project <a href="./documentation.html">here</a>.
+  <br>
+  <br>
+  <br>
   </div>
-
 </center>
 <div id="spacing">
 </div>
