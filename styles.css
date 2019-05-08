@@ -24,8 +24,6 @@ tr {
 body {
   margin: 0 auto; /* center */
   background-color: #e6e6e6;
-  background-image: url("lights.jpg");
-  background-size: cover;
 }
 
 #wrapper {
