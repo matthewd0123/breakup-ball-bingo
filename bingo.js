@@ -69,17 +69,13 @@ function pullStoryData() {
     var valuesObj = Object.values(allData)
     var table = document.getElementById("storyTable");
     console.log(allData)
+    console.log(keysObj)
+    console.log(valuesObj)
     for (i = 0; i < keysObj.length; i++) {
 	    var row = table.insertRow(i);
  	    var cell1 = row.insertCell(0);
  	    cell1.innerHTML = keysObj[i];
 	    var cell2 = row.insertCell(1)
-	    yeses = 0;
-	    for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
-  	    if (Object.values(Object.values(valuesObj[i])[j])[0] == "yes") {
-    	    	yeses ++;
-  	    }
-	    }
       cell2.innerHTML = yeses
     }
     });
