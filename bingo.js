@@ -47,6 +47,10 @@ function pullData() {
     var keysObj = Object.keys(allData)
     var valuesObj = Object.values(allData)
     var table = document.getElementById("dataTable");
+    while(table.hasChildNodes())
+    {
+      table.removeChild(table.firstChild);
+    }
     for (i = 0; i < keysObj.length; i++) {
 	    var row = table.insertRow(i);
  	    var cell1 = row.insertCell(0);
