@@ -77,7 +77,7 @@ function pullStoryData() {
  	    var cell1 = row.insertCell(0);
  	    cell1.innerHTML = keysObj[i];
 	    var cell2 = row.insertCell(1)
-      cell2.innerHTML = Object.values(valuesObj)
+      cell2.innerHTML = valuesObj[i]
     }
     });
 }
