@@ -49,6 +49,7 @@ function pullData() {
     var table = document.getElementById("dataTable");
     while(table.hasChildNodes())
     {
+      console.log("HERE")
       table.removeChild(table.firstChild);
     }
     for (i = 0; i < keysObj.length; i++) {
