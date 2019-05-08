@@ -23,7 +23,7 @@ tr {
 
 body {
   margin: 0 auto; /* center */
-  background-color: #e6e6e6;
+  background-color: white;
 }
 
 #wrapper {
@@ -66,6 +66,17 @@ p {
   width: 100%;
   height: 200px;
   border: 2px solid #DAA520;
+}
+
+#button {
+  background-color: #DAA520;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 @media

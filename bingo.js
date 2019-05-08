@@ -5,16 +5,17 @@ function setUsername() {
     for (i = 0; i < 25; i++) {
       firebase.database().ref("users/" + user + "/cell" + i).set({
         clicked: "no"
-      }); 
+      });
     }
 
     firebase.database().ref("users/" + user + "/cell12").set({
        clicked: "yes"
-    }); 
+    });
 }
 
 function addInteresting(user) {
     witness_account = String(document.getElementById("witness").value);
+    console.log(witness_account)
     firebase.database().ref("interesting_stories/" + user).set({
         value: witness_account + ""
     });
@@ -46,21 +47,43 @@ function pullData() {
     var keysObj = Object.keys(allData)
     var valuesObj = Object.values(allData)
     var table = document.getElementById("dataTable");
+    table.innerHTML = "";
     for (i = 0; i < keysObj.length; i++) {
-	var row = table.insertRow(i);
- 	var cell1 = row.insertCell(0);
- 	cell1.innerHTML = keysObj[i];
-	var cell2 = row.insertCell(1)
-	yeses = 0;
-	for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
+	    var row = table.insertRow(i);
+ 	    var cell1 = row.insertCell(0);
+ 	    cell1.innerHTML = keysObj[i];
+	    var cell2 = row.insertCell(1)
+	    yeses = 0;
+	    for (j = 0; j < Object.values(valuesObj[i]).length; j++) {
   	    if (Object.values(Object.values(valuesObj[i])[j])[0] == "yes") {
     	    	yeses ++;
   	    }
-	}
-    cell2.innerHTML = yeses
+	    }
+      cell2.innerHTML = yeses
     }
     });
 }
+
+function pullStoryData() {
+    firebase.database().ref('/interesting_stories/').once('value').then(function(snapshot) {
+    var  allData = snapshot.val()
+    var keysObj = Object.keys(allData)
+    var valuesObj = Object.values(allData)
+    var table = document.getElementById("storyTable");
+    console.log(allData)
+    console.log(keysObj)
+    console.log(valuesObj)
+    console.log(valuesObj[0])
+    for (i = 0; i < keysObj.length; i++) {
+	    var row = table.insertRow(i);
+ 	    var cell1 = row.insertCell(0);
+ 	    cell1.innerHTML = keysObj[i];
+	    var cell2 = row.insertCell(1)
+      cell2.innerHTML = Object.values(valuesObj[i])
+    }
+    });
+}
+
 
 function markSquare(cell, user) {
     var currentSquare = document.getElementById(cell);
