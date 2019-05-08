@@ -71,12 +71,13 @@ function pullStoryData() {
     console.log(allData)
     console.log(keysObj)
     console.log(valuesObj)
+    console.log(Object.values(valuesObj))
     for (i = 0; i < keysObj.length; i++) {
 	    var row = table.insertRow(i);
  	    var cell1 = row.insertCell(0);
  	    cell1.innerHTML = keysObj[i];
 	    var cell2 = row.insertCell(1)
-      cell2.innerHTML = yeses
+      cell2.innerHTML = Object.values(valuesObj)
     }
     });
 }
