@@ -15,6 +15,7 @@ function setUsername() {
 
 function addInteresting(user) {
     witness_account = String(document.getElementById("witness").value);
+    console.log(witness_account)
     firebase.database().ref("interesting_stories/" + user).set({
         value: witness_account + ""
     });
